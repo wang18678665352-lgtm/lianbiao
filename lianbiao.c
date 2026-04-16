@@ -3,8 +3,10 @@
 Node *head =NULL;
 Node *create_node(char *vlaue){
      Node*p = (Node*)malloc(sizeof(Node));
+     strcpy(p->vlaue, vlaue);
      p->next = head;
      head = p;
+     return p;
 };
 void free_node(Node*p){
      while(p){     
@@ -20,7 +22,7 @@ void print(Node*head){
 };
 int main(){
     char a[MAX_VLAUE];
-    scanf("%S",&a);
+    scanf("%s",a);
     create_node(a);
     print(head);
     free_node(head);

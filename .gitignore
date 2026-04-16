@@ -1,0 +1,35 @@
+# 编译输出文件
+*.exe
+*.o
+*.obj
+*.out
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# 调试文件
+*.pdb
+*.ilk
+*.exp
+*.dbg
+
+# VS Code 配置目录
+.vscode/
+!.vscode/extensions.json
+!.vscode/README.md
+
+# 日志、临时文件
+*.log
+*.tmp
+*.temp
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
+$*
+
+# 可执行文件（你的项目名）
+lianbiao
+lianbiao.exe

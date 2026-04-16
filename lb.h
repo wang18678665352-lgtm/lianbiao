@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define MAX_VLAUE 50
 typedef struct node{
-        char *vlaue[MAX_VLAUE];
+        char vlaue[MAX_VLAUE];
         struct node *next;
 }Node;
 Node *create_node(char *vlaue);
