@@ -66,8 +66,9 @@ void print(const char *filename, Node*head){
 
 
 int main(){
-    Node *head =load_data_from_file("data/input.txt", NULL);
-    // setlocale(LC_ALL, "chs");  // 设置为中文 locale
+    system("chcp 65001 >nul 2>&1");  // 设置控制台为UTF-8
+    setlocale(LC_ALL, "zh_CN.UTF-8");  // 设置为中文 UTF-8 locale
+    Node *head =load_data_from_file("data/test.txt", NULL);
     printf("[Success] File opened successfully\n");
     
     printf("Please enter a string: ");

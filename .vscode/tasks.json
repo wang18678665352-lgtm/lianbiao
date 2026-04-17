@@ -2,26 +2,47 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C/C++: gcc.exe 生成活动文件",
+            "label": "kill old exe",
             "type": "shell",
-            "command": "E:/bianyiqi/c/mingw64/bin/gcc.exe", // 这里也要填对路径
+            "command": "taskkill /IM lianbiao.exe /F 2>&1 | Out-Null; exit 0",
+            "args": [],
+            "problemMatcher": []
+        },
+        {
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "type": "cppbuild",
+            "command": "E:/bianyi/c/mingw64/bin/gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}\\lianbiao.c",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\lianbiao.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "detail": "编译器: E:/bianyi/c/mingw64/bin/gcc.exe",
+            "dependsOn": [
+                "kill old exe"
+            ]
+        },
+        {
+            "label": "Build and Run lianbiao",
+            "type": "shell",
+            "dependsOn": [
+                "C/C++: gcc.exe 生成活动文件"
+            ],
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": []
         }
     ]
 }
