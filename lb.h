@@ -10,6 +10,7 @@ typedef struct node{
 Node *create_node_head(char *vlaue, Node *head);
 Node *create_node_tail(char *vlaue, Node *head);
 Node *load_data_from_file(const char *filename, Node *head);
+Node *delet_data(const char*vlaue, Node*p);
 void free_node(Node*p);
 
 void print(const char *filename, Node*head);              
