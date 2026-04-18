@@ -1,0 +1,7 @@
+* text=auto
+*.c text
+*.h text
+*.json text
+*.md text
+*.bat text eol=crlf
+*.sh text eol=lf

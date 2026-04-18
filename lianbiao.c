@@ -126,21 +126,12 @@ Node *delet_data(const char*vlaue, Node*p){
 	return p;
 }
 int main(){
-    printf("[Success] Program started\n");
-    LARGE_INTEGER start, end, freq;
-    QueryPerformanceFrequency(&freq);
-    QueryPerformanceCounter(&start);
-    
     // 用Windows API设置UTF-8，比system()快得多
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
     // setlocale(LC_ALL, "zh_CN.UTF-8");  // 移除可能慢的locale设置
     
     Node *head =load_data_from_file("data/test.txt", NULL);
-    
-    QueryPerformanceCounter(&end);
-    double time_taken = (double)(end.QuadPart - start.QuadPart) / freq.QuadPart;
-    printf("初始化时间: %.6f 秒\n", time_taken);
     
     printf("[Success] File opened successfully\n");
     
